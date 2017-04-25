@@ -32,6 +32,23 @@ script:
  - make app=helloev3
  - cd ../common/ev3api/doc
  - make gh-pages
+ - ls -la
+ - pwd
+ - cd ..
+ - ls -la
+ - pwd
+ - cd ..
+ - ls -la
+ - pwd
+ - cd ..
+ - ls -la
+ - pwd
+ - cd ..
+ - ls -la
+ - pwd
+ - cd ..
+ - ls -la
+ - pwd
  
 deploy:
   provider: pages
