@@ -9,6 +9,7 @@ before_install:
  - sudo add-apt-repository ppa:team-gcc-arm-embedded/ppa -y # -qq is for travis CI
  - sudo apt-get update
  - sudo apt-get install gcc-arm-embedded u-boot-tools libboost1.55-all-dev -y
+ - sudo apt-get install doxygen
 
 before_script:
  - ls -la
@@ -27,4 +28,17 @@ before_script:
  - make app=loader
  - cd ../sdk/workspace
 
-script: make app=helloev3
+script: 
+ - make app=helloev3
+ - cd ../common/ev3api/doc
+ - make gh-pages
+ 
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+#  email: paral.jarek@gmail.com
+#  name: JarekParal
+  local_dir: ev3rt-doc-gh-pages/
+  on:
+    branch: master
