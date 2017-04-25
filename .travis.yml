@@ -32,23 +32,30 @@ script:
  - make app=helloev3
  - cd ../common/ev3api/doc
  - make gh-pages
- - ls -la
  - pwd
+ - ls -la
  - cd ..
- - ls -la
  - pwd
+ - ls -la
  - cd ..
- - ls -la
  - pwd
+ - ls -la
  - cd ..
- - ls -la
  - pwd
+ - ls -la
  - cd ..
- - ls -la
  - pwd
+ - ls -la
  - cd ..
- - ls -la
  - pwd
+ - ls -la
+ - cd ..
+ - pwd
+ - ls -la
+ - cd ..
+ - pwd
+ - ls -la
+ 
  
 deploy:
   provider: pages
@@ -56,6 +63,6 @@ deploy:
   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
 #  email: paral.jarek@gmail.com
 #  name: JarekParal
-  local_dir: ev3rt-doc-gh-pages
+  local_dir: RB-ev3rt-hrp2-sdk/ev3rt-doc-gh-pages
   on:
     branch: master
